@@ -24,7 +24,6 @@ body {
   margin-bottom: 100px;
   color: inherit;
   text-decoration: none;
-
 }
 
 /* Stili per la colonna di sinistra */
@@ -70,7 +69,6 @@ body {
   border: 2px rgb(150, 150, 150) solid;
   border-radius: 4px;
   box-shadow: 2px 2px 4px rgb(140, 140, 140);
-  
 }
 
 /* Stili per il testo giallo */
@@ -83,7 +81,7 @@ body {
 
 .cost-text-box {
   margin-left: -500px;
-  margin-bottom: 65p x;
+  margin-bottom: 65px;
 }
 
 /* Stili per il testo del costo */
@@ -253,40 +251,90 @@ body {
     transform: translateY(0px); /* Posizione iniziale */
     opacity: 1; /* Opacità iniziale */
   }
-  20% {
-    transform: translateY(-5px); /* Si solleva leggermente */
-    opacity: 0.9; /* Opacità leggermente ridotta */
-  }
-  40% {
-    transform: translateY(-13px); /* Si solleva ulteriormente */
-    opacity: 0.75; /* Opacità ridotta */
-  }
-  60% {
-    transform: translateY(-25px); /* Si solleva ancora di più */
-    opacity: 0.55; /* Ulteriore riduzione dell'opacità */
+  50% {
+    transform: translateY(-20px); /* Si solleva di più */
+    opacity: 0.6; /* Opacità ridotta */
   }
   80% {
-    transform: translateY(-42px); /* Si solleva quasi completamente */
-    opacity: 0.3; /* Opacità molto bassa */
+    transform: translateY(-30px); /* Massimo spostamento verso l'alto */
+    opacity: 0.4; /* Opacità minima */
   }
   100% {
-    transform: translateY(-65px); /* Fuori dalla vista */
-    opacity: 0; /* Completamente invisibile */
+    transform: translateY(-40px); /* Massimo spostamento verso l'alto */
+    opacity: 0.2; /* Opacità quasi nulla */
   }
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+/* Media Queries per la responsività */
+
+/* Per schermi piccoli (smartphone) */
+@media (max-width: 600px) {
+  .main {
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 30px;
+  }
+
+  .left {
+    font-size: 18px;
+  }
+
+  .right-navbar>div {
+    width: 120px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  #upgrades-container {
+    max-height: 300px;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .uPhones-image {
+    width: 250px;
+    margin-left: 0;
+  }
+
+  .upgrade {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .upgrade-img {
+    width: 40px;
+  }
+
+  .texts {
+    gap: 30px;
+    font-size: 18px;
+  }
+
+  .statistics {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
+/* Per schermi medi (tablet) */
+@media (max-width: 900px) {
+  .main {
+    flex-direction: column;
+    gap: 80px;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
+  .right-navbar>div {
+    width: 130px;
+    height: 40px;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  .upgrade {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .uPhones-image {
+    width: 270px;
+  }
 }
