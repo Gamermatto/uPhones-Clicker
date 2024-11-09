@@ -11,7 +11,7 @@ body {
   justify-content: flex-start;
   min-height: 100vh;
   text-decoration: none;
-  overflow-x: hidden; /* Evita lo scroll orizzontale */
+  overflow-x: hidden;
 }
 
 .main {
@@ -22,22 +22,26 @@ body {
   width: 100%;
   max-width: 1400px; /* Limita la larghezza su schermi grandi */
   padding: 20px;
+  box-sizing: border-box; /* Include il padding nella larghezza totale */
 }
 
+/* Sezione dei testi principali */
 .left {
   font-size: 18px;
   line-height: 1.5;
   text-align: center;
   width: 100%;
+  max-width: 1200px; /* Limita la larghezza su schermi grandi */
 }
 
-/* Sezione dei bottoni laterali */
+/* Sezione della barra laterale (i bottoni) */
 .right-navbar {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
   width: 100%;
+  max-width: 1200px;
 }
 
 .right-navbar>div {
@@ -50,32 +54,32 @@ body {
   cursor: pointer;
   font-size: 14px;
   margin: 10px;
+  border-radius: 5px;
 }
 
-/* Contenitore upgrades con scroll */
+/* Sezione degli upgrade (con scorrimento verticale) */
 #upgrades-container {
-  max-height: 250px;
+  max-height: 300px;
   width: 100%;
   padding: 10px;
   overflow-y: auto;
   margin-top: 20px;
-  margin-right: 0;
   border: 2px solid rgb(150, 150, 150);
   border-radius: 4px;
+  background-color: #3c3c3c;
 }
 
+/* Ogni singolo upgrade */
 .upgrade {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px;
   margin: 10px;
-  background-color: #3c3c3c;
+  background-color: #4a4a4a;
   border-radius: 5px;
   width: 100%;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
   opacity: 0.85;
 }
 
@@ -83,11 +87,15 @@ body {
   opacity: 1;
 }
 
+/* Immagine centrale (uPhones) */
 .uPhones-image {
   width: 80%;
   max-width: 250px;
   transition: opacity 0.3s ease;
   margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .uPhones-image:hover {
@@ -99,7 +107,7 @@ body {
   opacity: 0.6;
 }
 
-/* Media Queries */
+/* Layout responsive per schermi piccoli */
 @media (max-width: 600px) {
   body {
     padding: 10px;
@@ -126,7 +134,7 @@ body {
   }
 }
 
-/* Per tablet e schermi medi */
+/* Layout per schermi di dimensioni medie (tablet, piccoli laptop) */
 @media (max-width: 900px) {
   .main {
     gap: 30px;
@@ -148,7 +156,7 @@ body {
   }
 }
 
-/* Per schermi molto larghi */
+/* Layout per schermi molto larghi */
 @media (min-width: 1600px) {
   .main {
     max-width: 1200px;
