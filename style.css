@@ -1,89 +1,93 @@
-/* Importa il font Quicksand da Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-
-/* Stili generali per il body */
+/* Aggiungere un layout responsivo */
 body {
-  background-color: #2C2C2C; /* Colore di sfondo */
-  color: white; /* Colore del testo */
-  padding: 0; /* Rimuove il padding */
-  margin: 0; /* Rimuove il margine */
-  font-family: 'Quicksand', sans-serif; /* Font personalizzato */
+  background-color: #2C2C2C;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Allinea gli elementi al centro */
-  justify-content: flex-start; /* Posiziona gli elementi in alto */
-  height: 100vh; /* Imposta l'altezza della finestra */
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
   text-decoration: none;
-  overflow: hidden; /* Nasconde eventuali overflow */
+  overflow-x: hidden; /* Evita lo scroll orizzontale */
 }
 
-/* Contenitore principale */
 .main {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Spaziatura tra gli elementi */
-  text-align: center; /* Allinea al centro */
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px; /* Limita la larghezza su schermi grandi */
+  padding: 20px;
+}
+
+.left {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
   width: 100%;
 }
 
-/* Sezione di testo sinistro */
-.left {
-  font-size: 18px; /* Dimensione del testo */
-  line-height: 1.4;
-}
-
-/* Barra di navigazione a destra */
+/* Sezione dei bottoni laterali */
 .right-navbar {
   display: flex;
-  gap: 15px;
-  justify-content: center; /* Allinea gli elementi al centro */
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .right-navbar>div {
-  width: 120px; /* Larghezza più compatta */
-  height: 35px; /* Altezza fissa */
+  width: 120px;
+  height: 40px;
   background-color: red;
   text-align: center;
-  padding-top: 10px;
+  line-height: 40px;
   opacity: 0.85;
   cursor: pointer;
-  font-size: 14px; /* Riduce la dimensione del font */
+  font-size: 14px;
+  margin: 10px;
 }
 
-.right-navbar>:first-child {
-  background: blue;
-}
-
-.right-navbar>:nth-child(2) {
-  background: rgb(129, 14, 123);
-}
-
-/* Contenitore per gli upgrade */
+/* Contenitore upgrades con scroll */
 #upgrades-container {
-  max-height: 200px;
-  width: 100%; /* Rende il contenitore responsivo */
+  max-height: 250px;
+  width: 100%;
   padding: 10px;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-top: 20px;
   margin-right: 0;
   border: 2px solid rgb(150, 150, 150);
   border-radius: 4px;
 }
 
-/* Testo giallo */
-.yellow-text {
-  font-size: 24px;
-  color: rgb(234, 243, 115);
-  font-weight: 700;
-  text-shadow: 2px 2px 3px rgb(230, 220, 142);
+.upgrade {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin: 10px;
+  background-color: #3c3c3c;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.85;
 }
 
-/* Immagine */
+.upgrade:hover {
+  opacity: 1;
+}
+
 .uPhones-image {
-  margin-top: 20px;
   width: 80%;
-  max-width: 250px; /* Limita la larghezza dell'immagine */
+  max-width: 250px;
   transition: opacity 0.3s ease;
+  margin-top: 20px;
 }
 
 .uPhones-image:hover {
@@ -95,63 +99,7 @@ body {
   opacity: 0.6;
 }
 
-/* Upgrade box */
-.upgrade {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  border: 2px solid white;
-  border-radius: 5px;
-  width: 90%; /* Rende il box più piccolo e responsivo */
-  margin: 10px auto;
-}
-
-.upgrade:hover {
-  opacity: 0.85;
-  cursor: pointer;
-}
-
-.upgrade-img {
-  width: 40px;
-}
-
-.texts {
-  display: flex;
-  gap: 50px;
-  font-size: 18px;
-}
-
-/* Sezione per le statistiche */
-.statistics {
-  width: 100%;
-  padding: 20px;
-  text-align: center;
-  border: 2px solid white;
-  border-radius: 5px;
-  position: absolute;
-  bottom: 10px;
-}
-
-/* Effetto fade-up */
-.fade-up {
-  animation: fade-up 1s ease-out;
-}
-
-@keyframes fade-up {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Media Queries per la responsività */
-
-/* Per schermi piccoli (smartphone) */
+/* Media Queries */
 @media (max-width: 600px) {
   body {
     padding: 10px;
@@ -161,23 +109,10 @@ body {
     gap: 15px;
   }
 
-  .left {
-    font-size: 16px;
-  }
-
   .right-navbar>div {
     width: 100px;
     height: 30px;
     font-size: 12px;
-  }
-
-  #upgrades-container {
-    max-height: 150px;
-    padding: 5px;
-  }
-
-  .yellow-text {
-    font-size: 20px;
   }
 
   .uPhones-image {
@@ -189,23 +124,9 @@ body {
     width: 90%;
     font-size: 14px;
   }
-
-  .upgrade-img {
-    width: 35px;
-  }
-
-  .statistics {
-    padding: 15px;
-    font-size: 14px;
-  }
-
-  .texts {
-    gap: 20px;
-    font-size: 14px;
-  }
 }
 
-/* Per schermi medi (tablet) */
+/* Per tablet e schermi medi */
 @media (max-width: 900px) {
   .main {
     gap: 30px;
@@ -225,14 +146,25 @@ body {
     width: 85%;
     font-size: 16px;
   }
+}
 
-  .statistics {
-    padding: 20px;
+/* Per schermi molto larghi */
+@media (min-width: 1600px) {
+  .main {
+    max-width: 1200px;
+  }
+
+  .right-navbar>div {
     font-size: 16px;
   }
 
-  .texts {
-    gap: 30px;
-    font-size: 16px;
+  .uPhones-image {
+    width: 50%;
+    max-width: 300px;
+  }
+
+  .upgrade {
+    width: 80%;
+    font-size: 18px;
   }
 }
