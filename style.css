@@ -3,52 +3,50 @@
 
 /* Stili generali per il body */
 body {
-  background-color: #2C2C2C; /* Imposta il colore di sfondo */
-  color: white; /* Imposta il colore del testo */ 
-  padding: 0; /* Rimuove il padding predefinito */   
-  margin: 0; /* Rimuove il margine predefinito */
+  background-color: #2C2C2C; /* Colore di sfondo */
+  color: white; /* Colore del testo */
+  padding: 0; /* Rimuove il padding */
+  margin: 0; /* Rimuove il margine */
+  font-family: 'Quicksand', sans-serif; /* Font personalizzato */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Allinea gli elementi al centro */
+  justify-content: center; /* Centra verticalmente */
+  height: 100vh; /* Imposta l'altezza della finestra */
   text-decoration: none;
-  display: grid; /* Usa un layout grid standard */
-  place-items: center;
-  height: 100vh; /* Imposta l'altezza del body a 100% dell'altezza della finestra */
-  position: relative;
-  font-family: 'Quicksand', sans-serif;
-  text-decoration: none;
-  overflow: hidden; /* Impedisce lo scorrimento verticale */
+  overflow: hidden; /* Nasconde eventuali overflow */
 }
 
-/* Stili per il contenitore principale */
+/* Contenitore principale */
 .main {
-  display: flex; /* Usa il layout flessibile */
-  gap: 200px; /* Spazio tra gli elementi */
-  margin-bottom: 100px;
-  color: inherit;
-  text-decoration: none;
+  display: flex;
+  flex-direction: column; /* Modifica il layout per una visualizzazione in colonna su schermi più piccoli */
+  gap: 20px; /* Spaziatura tra gli elementi */
+  text-align: center; /* Allinea al centro */
 }
 
-/* Stili per la colonna di sinistra */
+/* Sezione di testo sinistro */
 .left {
-  text-align: center; /* Allinea il testo al centro */
-  font-size: 25px; /* Dimensione del font */
+  font-size: 18px; /* Dimensione del testo */
+  line-height: 1.4;
 }
 
-/* Stili per la colonna di destra */
+/* Barra di navigazione a destra */
 .right-navbar {
   display: flex;
-  font-weight: bold;
+  gap: 15px;
+  justify-content: center; /* Allinea gli elementi al centro */
 }
 
 .right-navbar>div {
-  width: 140px;
-  height: 40px;
+  width: 120px; /* Larghezza più compatta */
+  height: 35px; /* Altezza fissa */
   background-color: red;
   text-align: center;
-  padding-top: 15px;
-}
-
-.right-navbar>div {
+  padding-top: 10px;
   opacity: 0.85;
   cursor: pointer;
+  font-size: 14px; /* Riduce la dimensione del font */
 }
 
 .right-navbar>:first-child {
@@ -59,67 +57,53 @@ body {
   background: rgb(129, 14, 123);
 }
 
+/* Contenitore per gli upgrade */
 #upgrades-container {
-  max-height: 400px;
-  width: 500px;
-  padding: 20px;
+  max-height: 200px;
+  width: 100%; /* Rende il contenitore responsivo */
+  padding: 10px;
   overflow-y: scroll;
-  margin-top: 70px;
-  margin-right: -255px;
-  border: 2px rgb(150, 150, 150) solid;
+  margin-top: 20px;
+  margin-right: 0;
+  border: 2px solid rgb(150, 150, 150);
   border-radius: 4px;
-  box-shadow: 2px 2px 4px rgb(140, 140, 140);
 }
 
-/* Stili per il testo giallo */
+/* Testo giallo */
 .yellow-text {
-  font-size: 32px; /* Dimensione del font */
-  color: rgb(234, 243, 115); /* Colore del testo */
-  font-weight: 700; /* Grassetto */
-  text-shadow: 2px 2px 3px rgb(230, 220, 142); /* Ombra del testo */
+  font-size: 24px;
+  color: rgb(234, 243, 115);
+  font-weight: 700;
+  text-shadow: 2px 2px 3px rgb(230, 220, 142);
 }
 
-.cost-text-box {
-  margin-left: -500px;
-  margin-bottom: 65px;
-}
-
-/* Stili per il testo del costo */
-.cost-text {
-  font-size: 18px; /* Dimensione del font */
-}
-
-/* Stili per l'immagine degli uPhones */
+/* Immagine */
 .uPhones-image {
-  margin-top: -15px;
-  width: 300px;
-  margin-left: -500px;
+  margin-top: 20px;
+  width: 80%;
+  max-width: 250px; /* Limita la larghezza dell'immagine */
+  transition: opacity 0.3s ease;
 }
 
-/* Effetti al passaggio del mouse sull'immagine */
 .uPhones-image:hover {
-  opacity: 0.9; /* Riduce l'opacità al passaggio del mouse */
-  cursor: pointer; /* Cambia il cursore a mano */
+  opacity: 0.8;
+  cursor: pointer;
 }
 
-/* Effetti quando l'immagine è attiva (cliccata) */
 .uPhones-image:active {
-  opacity: 0.8; /* Riduce ulteriormente l'opacità */
-  transform: scale(1.02); /* Aumenta leggermente la dimensione dell'immagine */
+  opacity: 0.6;
 }
 
-/* Stili per le sezioni di upgrade */
+/* Upgrade box */
 .upgrade {
-  display: flex; /* Usa il layout flessibile */
-  align-items: center; /* Allinea verticalmente al centro */
-  justify-content: space-between; /* Spazio tra gli elementi */
-  padding: 13px 20px; /* Padding interno */
-  border: 3px solid white; /* Bordo bianco */
-  border-radius: 5px; /* Angoli arrotondati */
-  height: 60px; /* Altezza fissa */
-  width: 330px; /* Larghezza fissa */
-  position: relative; /* Posizionamento relativo per gli elementi figli */
-  margin-bottom: 20px; /* Margine inferiore */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: 90%; /* Rende il box più piccolo e responsivo */
+  margin: 10px auto;
 }
 
 .upgrade:hover {
@@ -127,141 +111,40 @@ body {
   cursor: pointer;
 }
 
-.type-skill {
-  display: none;
-}
-
-.type-artifacts {
-  display: none;
-}
-
-/* Stili per l'immagine nell'upgrade */
 .upgrade-img {
-  width: 55px; /* Larghezza fissa dell'immagine */
+  width: 40px;
 }
 
-/* Contenitore per le informazioni sui costi */
-.uPhones-img-container {
-  position: relative;
-}
-
-/* Stili per l'immagine degli uPhones */
-.uPhones-img {
-  width: 13px; /* Larghezza fissa */
-  height: 20px; /* Altezza fissa */
-}
-
-/* Stili per il titolo della sezione centrale */
-.mid-section h4 {
-  margin: 0; /* Rimuove il margine predefinito */
-  margin-bottom: 20px; /* Margine inferiore */
-  font-size: 20px; /* Dimensione del font */
-}
-
-/* Stili per il testo nella sezione centrale */
-.mid-section p {
-  margin: 0; /* Rimuove il margine predefinito */
-}
-
-/* Contenitore per le informazioni sui costi */
-.cost-info {
-  display: flex; /* Usa il layout flessibile */
-  align-items: center; /* Allinea verticalmente al centro */
-  gap: 5px; /* Spazio tra gli elementi */
-}
-
-/* Stile per il tooltip delle informazioni sul livello successivo */
-.next-level-info {
-  position: absolute; /* Posizionamento assoluto */
-  right: -105px; /* Sposta a destra */
-  background-color: rgb(90, 89, 90); /* Colore di sfondo */
-  height: 87px; /* Altezza fissa */
-  width: 100px; /* Larghezza fissa */
-  text-align: center; /* Allinea il testo al centro */
-  display: none; /* Nasconde di default */
-  font-size: 15px; /* Dimensione del testo */
-  border-radius: 2px; /* Larghezza del bordo */
-}
-
-/* Mostra le informazioni sul livello successivo quando si passa sopra l'upgrade */
-.upgrade:hover .next-level-info {
-  display: block; /* Mostra il tooltip */
-}
-
-/* Stili per la sezione delle statistiche */
-.statistics {
-  position: absolute; /* Posizionamento assoluto */
-  bottom: 0; /* Posiziona in basso */
-  width: 450px; /* Larghezza fissa */
-  padding: 30px; /* Padding interno */
-  border: 2px white solid; /* Bordo bianco */
-  border-top-right-radius: 10px; /* Arrotonda l'angolo in alto a destra */
-  border-top-left-radius: 10px; /* Arrotonda l'angolo in alto a sinistra */
-  left: 50px; /* Sposta a sinistra */
-  transform: translate(90%); /* Trasla l'elemento per centrarlo */
-}
-
-/* Stili per il contenitore di testi */
 .texts {
-  display: flex; /* Usa il layout flessibile */
-  gap: 100px; /* Spazio tra gli elementi */
-  justify-content: center; /* Centra gli elementi orizzontalmente */
-  font-weight: bold; /* Grassetto */
-  font-size: 22px; /* Dimensione del font */
-}
-
-.util-buttons {
-  position: absolute;
-  top: 15px;
-  right: 15px;
   display: flex;
-  gap: 10px;
+  gap: 50px;
+  font-size: 18px;
 }
 
-.util-button {
-  padding: 8px 15px;
-  font-size: 16px;
-  font-weight: 600;
-  font-family: inherit;
-  border-radius: 6px;
-}
-
-.util-button:hover {
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-.relic {
+/* Sezione per le statistiche */
+.statistics {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 5px;
   position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 20px;
-  font-weight: 600;
+  bottom: 10px;
 }
 
-/* Animazione per il fade-up */
+/* Effetto fade-up */
 .fade-up {
-  animation: fade-up 1s; /* Applica l'animazione fade-up */
+  animation: fade-up 1s ease-out;
 }
 
-/* Definizione dell'animazione fade-up */
 @keyframes fade-up {
   0% {
-    transform: translateY(0px); /* Posizione iniziale */
-    opacity: 1; /* Opacità iniziale */
-  }
-  50% {
-    transform: translateY(-20px); /* Si solleva di più */
-    opacity: 0.6; /* Opacità ridotta */
-  }
-  80% {
-    transform: translateY(-30px); /* Massimo spostamento verso l'alto */
-    opacity: 0.4; /* Opacità minima */
+    opacity: 0;
+    transform: translateY(30px);
   }
   100% {
-    transform: translateY(-40px); /* Massimo spostamento verso l'alto */
-    opacity: 0.2; /* Opacità quasi nulla */
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -269,72 +152,86 @@ body {
 
 /* Per schermi piccoli (smartphone) */
 @media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
   .main {
-    flex-direction: column;
-    gap: 50px;
-    margin-bottom: 30px;
+    gap: 15px;
   }
 
   .left {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .right-navbar>div {
-    width: 120px;
-    height: 35px;
-    font-size: 14px;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
   }
 
   #upgrades-container {
-    max-height: 300px;
-    width: 100%;
-    margin-right: 0;
+    max-height: 150px;
+    padding: 5px;
+  }
+
+  .yellow-text {
+    font-size: 20px;
   }
 
   .uPhones-image {
-    width: 250px;
-    margin-left: 0;
+    width: 70%;
+    max-width: 200px;
   }
 
   .upgrade {
-    width: 100%;
+    width: 90%;
     font-size: 14px;
   }
 
   .upgrade-img {
-    width: 40px;
-  }
-
-  .texts {
-    gap: 30px;
-    font-size: 18px;
+    width: 35px;
   }
 
   .statistics {
-    width: 100%;
-    left: 0;
-    transform: none;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .texts {
+    gap: 20px;
+    font-size: 14px;
   }
 }
 
 /* Per schermi medi (tablet) */
 @media (max-width: 900px) {
   .main {
-    flex-direction: column;
-    gap: 80px;
+    gap: 30px;
   }
 
   .right-navbar>div {
-    width: 130px;
-    height: 40px;
-  }
-
-  .upgrade {
-    width: 90%;
-    font-size: 16px;
+    width: 110px;
+    height: 35px;
   }
 
   .uPhones-image {
-    width: 270px;
+    width: 60%;
+    max-width: 220px;
+  }
+
+  .upgrade {
+    width: 85%;
+    font-size: 16px;
+  }
+
+  .statistics {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .texts {
+    gap: 30px;
+    font-size: 16px;
   }
 }
