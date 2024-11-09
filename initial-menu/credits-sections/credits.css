@@ -1,0 +1,73 @@
+/* Stili di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1c1c1c;
+    color: #fff;
+  }
+  
+  .credits-section {
+    text-align: center;
+  }
+  
+  .credits-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #FFD700;
+  }
+  
+  .credits-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .credits-item {
+    background: #333;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    width: 200px;
+  }
+  
+  .credits-item h2 {
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin-bottom: 1rem;
+  }
+  
+  .credits-item p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  .credits-item:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Animazione semplice */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .credits-section {
+    animation: fadeIn 1s ease-in-out;
+  }
+  

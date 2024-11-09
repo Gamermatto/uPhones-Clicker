@@ -1,0 +1,51 @@
+body {
+    background-color: #1c1c1c;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 40px;
+    margin: 0;
+  }
+  
+  .contact-section {
+    width: 90%;
+    max-width: 600px;
+    background: linear-gradient(135deg, #333, #555);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border-left: 6px solid #ffc300;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .contact-section h1 {
+    font-size: 2em;
+    color: #ffc300;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .contact-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
+  .contact-section a {
+    color: #ffc300;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .contact-section a:hover {
+    text-decoration: underline;
+  }
+  
+  .contact-section:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  }
+  
