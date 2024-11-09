@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center; /* Allinea gli elementi al centro */
-  justify-content: center; /* Centra verticalmente */
+  justify-content: flex-start; /* Posiziona gli elementi in alto */
   height: 100vh; /* Imposta l'altezza della finestra */
   text-decoration: none;
   overflow: hidden; /* Nasconde eventuali overflow */
@@ -20,9 +20,10 @@ body {
 /* Contenitore principale */
 .main {
   display: flex;
-  flex-direction: column; /* Modifica il layout per una visualizzazione in colonna su schermi più piccoli */
+  flex-direction: column;
   gap: 20px; /* Spaziatura tra gli elementi */
   text-align: center; /* Allinea al centro */
+  width: 100%;
 }
 
 /* Sezione di testo sinistro */
