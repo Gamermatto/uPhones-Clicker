@@ -3,156 +3,118 @@
 
 /* Stili generali per il body */
 body {
-  background-color: #2C2C2C; /* Imposta il colore di sfondo */
-  color: white; /* Imposta il colore del testo */ 
-  padding: 0; /* Rimuove il padding predefinito */   
-  margin: 0; /* Rimuove il margine predefinito */
+  background-color: #2C2C2C;
+  color: white;
+  padding: 0;
+  margin: 0;
   text-decoration: none;
-  display: grid; /* Usa un layout grid standard */
+  display: grid;
   place-items: center;
-  height: 100vh; /* Imposta l'altezza del body a 100% dell'altezza della finestra */
+  height: 100vh;
   position: relative;
   font-family: 'Quicksand', sans-serif;
-  text-decoration: none;
-  overflow: hidden; /* Impedisce lo scorrimento verticale */
+  overflow: hidden;
 }
 
 /* Stili per il contenitore principale */
 .main {
-  display: flex; /* Usa il layout flessibile */
-  gap: 200px; /* Spazio tra gli elementi */
-  margin-bottom: 100px;
+  display: flex;
+  gap: 10vw; /* Spazio tra gli elementi relativo alla larghezza dello schermo */
+  margin-bottom: 5vh; /* Margine inferiore in base all'altezza della finestra */
   color: inherit;
   text-decoration: none;
-
-}
-
-/* Per schermi piccoli come smartphone */
-@media (max-width: 600px) {
-  .main {
-    flex-direction: column; /* Cambia da righe a colonne */
-    gap: 20px; /* Riduci il gap */
-  }
-
-  .right-navbar > div {
-    width: 100px;
-    height: 35px;
-  }
-
-  /* Altri aggiustamenti specifici per schermi piccoli */
-  .uPhones-image {
-    width: 200px;
-    margin-left: 0;
-  }
-}
-
-/* Per schermi medi come tablet */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .main {
-    gap: 100px; /* Riduci il gap tra elementi */
-  }
-
-  /* Altri aggiustamenti specifici per schermi medi */
-  .statistics {
-    width: 70px;
-    height: 200px;
-  }
 }
 
 /* Stili per la colonna di sinistra */
 .left {
-  text-align: center; /* Allinea il testo al centro */
-  font-size: 25px; /* Dimensione del font */
+  text-align: center;
+  font-size: 2vw; /* Dimensione del font relativa alla larghezza della finestra */
 }
 
 /* Stili per la colonna di destra */
 .right-navbar {
   display: flex;
   font-weight: bold;
-  margin-top: 108px;
-  
+  margin-top: 5vh;
 }
 
-.right-navbar>div {
-  width: 140px;
-  height: 40px;
-  border-radius: 15px;
+.right-navbar > div {
+  width: 10vw; /* Larghezza relativa alla larghezza della finestra */
+  height: 5vh; /* Altezza relativa all'altezza della finestra */
+  border-radius: 1vw; /* Arrotondamento in base alla larghezza della finestra */
   background-color: red;
   text-align: center;
-  padding-top: 15px;
-}
-
-.right-navbar>div {
+  padding-top: 1vh;
   opacity: 0.85;
   cursor: pointer;
 }
 
-.right-navbar>:first-child {
+.right-navbar > :first-child {
   background: blue;
 }
 
-.right-navbar>:nth-child(2) {
+.right-navbar > :nth-child(2) {
   background: rgb(129, 14, 123);
 }
 
 #upgrades-container {
-  max-height: 400px;
-  width: 500px;
-  padding: 20px;
+  max-height: 40vh; /* Altezza massima in base all'altezza della finestra */
+  width: 30vw; /* Larghezza relativa alla larghezza della finestra */
+  padding: 5.9vh;
   overflow-y: scroll;
-  position: relative; /* Imposta una posizione relativa */
-  margin-top: 15px;
+  position: relative;
+  margin-bottom: 10vh;
+  left: 1vw;
 }
 
 /* Stili per il testo giallo */
 .yellow-text {
-  font-size: 32px; /* Dimensione del font */
-  color: rgb(234, 243, 115); /* Colore del testo */
-  font-weight: 700; /* Grassetto */
-  text-shadow: 2px 2px 3px rgb(230, 220, 142); /* Ombra del testo */
+  font-size: 3vw; /* Dimensione del font relativa alla larghezza della finestra */
+  color: rgb(234, 243, 115);
+  font-weight: 700;
+  text-shadow: 0.2vw 0.2vw 0.3vw rgb(230, 220, 142);
 }
 
 .cost-text-box {
-  margin-left: -400px;
-  margin-bottom: 65p x;
+  margin-left: -20vw;
+  margin-bottom: 3vh;
 }
 
 /* Stili per il testo del costo */
 .cost-text {
-  font-size: 18px; /* Dimensione del font */
+  font-size: 1.5vw;
 }
 
 /* Stili per l'immagine degli uPhones */
 .uPhones-image {
-  margin-top: -15px;
-  width: 300px;
-  margin-left: -400px;
+  margin-top: -1vh;
+  width: 20vw; /* Larghezza in base alla finestra */
+  margin-left: -20vw;
 }
 
-/* Effetti al passaggio del mouse sull'immagine */
 .uPhones-image:hover {
-  opacity: 0.9; /* Riduce l'opacità al passaggio del mouse */
-  cursor: pointer; /* Cambia il cursore a mano */
+  opacity: 0.9;
+  cursor: pointer;
 }
 
-/* Effetti quando l'immagine è attiva (cliccata) */
 .uPhones-image:active {
-  opacity: 0.8; /* Riduce ulteriormente l'opacità */
-  transform: scale(1.02); /* Aumenta leggermente la dimensione dell'immagine */
+  opacity: 0.8;
+  transform: scale(1.02);
 }
 
 /* Stili per le sezioni di upgrade */
 .upgrade {
-  display: flex; /* Usa il layout flessibile */
-  align-items: center; /* Allinea verticalmente al centro */
-  justify-content: space-between; /* Spazio tra gli elementi */
-  padding: 13px 20px; /* Padding interno */
-  border: 3px solid white; /* Bordo bianco */
-  border-radius: 15px; /* Angoli arrotondati */
-  height: 60px; /* Altezza fissa */
-  width: 330px; /* Larghezza fissa */
-  position: relative; /* Posizionamento relativo per gli elementi figli */
-  margin-bottom: 20px; /* Margine inferiore */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vh 3vw;
+  border: 0.19vw solid white;
+  border-radius: 1vw;
+  height: 6vh;
+  width: 20vw;
+  position: relative;
+  margin-bottom: 1vh;
+  left: -3vw;
 }
 
 .upgrade:hover {
@@ -160,104 +122,82 @@ body {
   cursor: pointer;
 }
 
-.type-skill {
-  display: none;
-}
-
-.type-artifacts {
-  display: none;
-}
-
-/* Stili per l'immagine nell'upgrade */
 .upgrade-img {
-  width: 55px; /* Larghezza fissa dell'immagine */
+  width: 4vw;
 }
 
-/* Contenitore per le informazioni sui costi */
-.uPhones-img-container {
-  position: relative;
-}
-
-/* Stili per l'immagine degli uPhones */
 .uPhones-img {
-  width: 13px; /* Larghezza fissa */
-  height: 20px; /* Altezza fissa */
+  width: 1vw;
+  height: 2vh;
 }
 
-/* Stili per il titolo della sezione centrale */
 .mid-section h4 {
-  margin: 0; /* Rimuove il margine predefinito */
-  margin-bottom: 20px; /* Margine inferiore */
-  font-size: 20px; /* Dimensione del font */
+  margin: 0;
+  margin-bottom: 2vh;
+  font-size: 2vw;
 }
 
-/* Stili per il testo nella sezione centrale */
 .mid-section p {
-  margin: 0; /* Rimuove il margine predefinito */
+  margin: 0;
 }
 
-/* Contenitore per le informazioni sui costi */
 .cost-info {
-  display: flex; /* Usa il layout flessibile */
-  align-items: center; /* Allinea verticalmente al centro */
-  gap: 5px; /* Spazio tra gli elementi */
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
 }
 
-/* Stile per il tooltip delle informazioni sul livello successivo */
 .next-level-info {
-  position: absolute; /* Posizionamento assoluto */
-  right: -105px; /* Sposta a destra */
-  background-color: rgb(90, 89, 90); /* Colore di sfondo */
-  height: 87px; /* Altezza fissa */
-  width: 100px; /* Larghezza fissa */
-  text-align: center; /* Allinea il testo al centro */
-  display: none; /* Nasconde di default */
-  font-size: 15px; /* Dimensione del testo */
-  border-radius: 2px; /* Larghezza del bordo */
+  position: absolute;
+  right: -5vw;
+  background-color: rgb(90, 89, 90);
+  height: 10vh;
+  width: 7vw;
+  text-align: center;
+  display: none;
+  font-size: 1vw;
+  border-radius: 0.5vw;
 }
 
-/* Mostra le informazioni sul livello successivo quando si passa sopra l'upgrade */
 .upgrade:hover .next-level-info {
-  display: block; /* Mostra il tooltip */
+  display: block;
 }
 
 /* Stili per la sezione delle statistiche */
 .statistics {
-  position: absolute; /* Posizionamento assoluto */
-  bottom: 0; /* Posiziona in basso */
-  width: 90px; /* Larghezza fissa */
-  height: 300px;
-  padding: 30px; /* Padding interno */
-  border: 2px white solid; /* Bordo bianco */
-  border-radius: 10px;
-  top: 200px;
-  left: 1100px; /* Sposta a sinistra */
-  transform: translate(90%); /* Trasla l'elemento per centrarlo */
+  position: absolute;
+  bottom: 0;
+  width: 8vw;
+  height: 30vh;
+  padding: 3vh;
+  border: 0.2vw white solid;
+  border-radius: 1vw;
+  top: 32.5vh;
+  left: 70vw;
+  transform: translate(90%);
 }
 
-/* Stili per il contenitore di testi */
 .texts {
-  display: block; /* Usa il layout flessibile */
-  gap: 100px; /* Spazio tra gli elementi */
-  justify-content: linear; /* Centra gli elementi orizzontalmente */
-  font-weight: bold; /* Grassetto */
-  font-size: 22px; /* Dimensione del font */
+  display: block;
+  gap: 10vw;
+  font-weight: bold;
+  font-size: 2vw;
 }
 
 .util-buttons {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 1.5vh;
+  right: 1.5vw;
   display: flex;
-  gap: 10px;
+  gap: 1vw;
 }
 
 .util-button {
-  padding: 8px 15px;
-  font-size: 16px;
+  padding: 0.8vh 1.5vw;
+  font-size: 1.6vw;
   font-weight: 600;
   font-family: inherit;
-  border-radius: 6px;
+  border-radius: 0.6vw;
 }
 
 .util-button:hover {
@@ -267,10 +207,10 @@ body {
 
 .relic {
   position: absolute;
-  top: 20px;
+  top: 2vh;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 20px;
+  font-size: 2vw;
   font-weight: 600;
 }
 
