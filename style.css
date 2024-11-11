@@ -27,6 +27,38 @@ body {
 
 }
 
+/* Per schermi piccoli come smartphone */
+@media (max-width: 600px) {
+  .main {
+    flex-direction: column; /* Cambia da righe a colonne */
+    gap: 20px; /* Riduci il gap */
+  }
+
+  .right-navbar > div {
+    width: 100px;
+    height: 35px;
+  }
+
+  /* Altri aggiustamenti specifici per schermi piccoli */
+  .uPhones-image {
+    width: 200px;
+    margin-left: 0;
+  }
+}
+
+/* Per schermi medi come tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .main {
+    gap: 100px; /* Riduci il gap tra elementi */
+  }
+
+  /* Altri aggiustamenti specifici per schermi medi */
+  .statistics {
+    width: 70px;
+    height: 200px;
+  }
+}
+
 /* Stili per la colonna di sinistra */
 .left {
   text-align: center; /* Allinea il testo al centro */
@@ -37,11 +69,14 @@ body {
 .right-navbar {
   display: flex;
   font-weight: bold;
+  margin-top: 108px;
+  
 }
 
 .right-navbar>div {
   width: 140px;
   height: 40px;
+  border-radius: 15px;
   background-color: red;
   text-align: center;
   padding-top: 15px;
@@ -65,12 +100,8 @@ body {
   width: 500px;
   padding: 20px;
   overflow-y: scroll;
-  margin-top: 70px;
-  margin-right: -255px;
-  border: 2px rgb(150, 150, 150) solid;
-  border-radius: 4px;
-  box-shadow: 2px 2px 4px rgb(140, 140, 140);
-  
+  position: relative; /* Imposta una posizione relativa */
+  margin-top: 15px;
 }
 
 /* Stili per il testo giallo */
@@ -82,7 +113,7 @@ body {
 }
 
 .cost-text-box {
-  margin-left: -500px;
+  margin-left: -400px;
   margin-bottom: 65p x;
 }
 
@@ -95,7 +126,7 @@ body {
 .uPhones-image {
   margin-top: -15px;
   width: 300px;
-  margin-left: -500px;
+  margin-left: -400px;
 }
 
 /* Effetti al passaggio del mouse sull'immagine */
@@ -117,7 +148,7 @@ body {
   justify-content: space-between; /* Spazio tra gli elementi */
   padding: 13px 20px; /* Padding interno */
   border: 3px solid white; /* Bordo bianco */
-  border-radius: 5px; /* Angoli arrotondati */
+  border-radius: 15px; /* Angoli arrotondati */
   height: 60px; /* Altezza fissa */
   width: 330px; /* Larghezza fissa */
   position: relative; /* Posizionamento relativo per gli elementi figli */
@@ -194,20 +225,21 @@ body {
 .statistics {
   position: absolute; /* Posizionamento assoluto */
   bottom: 0; /* Posiziona in basso */
-  width: 450px; /* Larghezza fissa */
+  width: 90px; /* Larghezza fissa */
+  height: 300px;
   padding: 30px; /* Padding interno */
   border: 2px white solid; /* Bordo bianco */
-  border-top-right-radius: 10px; /* Arrotonda l'angolo in alto a destra */
-  border-top-left-radius: 10px; /* Arrotonda l'angolo in alto a sinistra */
-  left: 50px; /* Sposta a sinistra */
+  border-radius: 10px;
+  top: 200px;
+  left: 1100px; /* Sposta a sinistra */
   transform: translate(90%); /* Trasla l'elemento per centrarlo */
 }
 
 /* Stili per il contenitore di testi */
 .texts {
-  display: flex; /* Usa il layout flessibile */
+  display: block; /* Usa il layout flessibile */
   gap: 100px; /* Spazio tra gli elementi */
-  justify-content: center; /* Centra gli elementi orizzontalmente */
+  justify-content: linear; /* Centra gli elementi orizzontalmente */
   font-weight: bold; /* Grassetto */
   font-size: 22px; /* Dimensione del font */
 }
@@ -277,14 +309,17 @@ body {
 
 ::-webkit-scrollbar {
   width: 10px;
+  display: none;
 }
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #888;
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
