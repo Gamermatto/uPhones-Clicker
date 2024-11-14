@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>uPhones Menu</title>
+  <link rel="stylesheet" href="./initial-menu/style.css">
+  <link rel="stylesheet" href="./utils/settings/settings.css">
+
+</head>
+<html>
+<!-- partial:index.partial.html -->
+<ul>
+    <li><a href="./clickerhome.html" id="Play" data-text="Play">Play</a></li>
+    <li><a href="./initial-menu/info-sections/info.html" data-text="Info">Info</a></li>
+    <li><a href="./initial-menu/credits-sections/credits.html" data-text="Credits">Credits</a></li>
+  </ul>
+<!-- partial -->
+
+<script>
+  // Recupera il tempo salvato e riprendi da lì
+const IM = new Audio('/assets/audio/InitialMusic.mp4');
+IM.volume = 0.2;
+
+// Controlla se esiste un tempo salvato
+const savedTime = localStorage.getItem("musicTime");
+if (savedTime) {
+    IM.currentTime = savedTime;
+}
+IM.play();
+
+
+</script>
+
+</html>

@@ -1,5 +1,5 @@
 import { powerUpIntervals, upgrades } from "./constants/upgrades.js";
-import { defaultUpgradeValues } from "./constants/defaultValues.js";
+import { defaultSkillValues, defaultUpgradeValues } from "./constants/defaultValues.js";
 import { nf } from "./utils/formatter.js";
 
 // Seleziona l'elemento che mostra il costo degli uPhones e converte il suo valore in numero
@@ -24,11 +24,7 @@ let relic = document.getElementById("relic");
 // Variabili iniziali per il guadagno per click (gpc) e per secondo (gps)
 let uPpc = 1; // Guadagno iniziale per click
 
-let uPps = 0; // Guadagno iniziale per secondo
-
-// Variabili per gli audio
-const bgm = new Audio('/assets/audio/bgm.mp3');
-bgm.volume = 0.1;
+let uPps = 0; // Guadagno iniziale per second
 
 // Funzione per incrementare gli uPhones al click
 function incrementuPhones(event) {
@@ -45,88 +41,86 @@ function incrementuPhones(event) {
   const div = document.createElement('div');
   div.innerHTML = `+${Math.round(uPpc)}`; // Mostra il valore incrementato
   div.style.cssText = `color: white; position: absolute; top: ${y}px; left: ${x}px; font-size: 15px; pointer-events: none; transform: translate(-50%, -50%)`;
-  document.body.appendChild(div); // Aggiunge il div al body della pagina
+  uPhonesImgContainer.appendChild(div); // Aggiunge il div al body della pagina
 
   div.classList.add('fade-up'); // Aggiunge la classe per l'animazione
 
   timeout(div); // Chiama la funzione per rimuovere il div dopo un certo tempo
 }
 
-// Funzione per rimuovere il div dopo un timeout
 const timeout = (div) => {
   setTimeout(() => {
-    div.remove(); // Rimuove l'elemento div dopo 800 ms
-  }, 800);
+    div.remove()
+  }, 800)
 }
 
-// Funzione per acquistare un upgrade
+// Funzione per rimuovere il div dopo un timeout
 function buyUpgrade(upgrade) {
   const mu = upgrades.find((u) => {
-    if (u.name === upgrade) return u; // Trova l'upgrade selezionato
-  });
+    if (u.name === upgrade) return u
+  })
 
-  const upgradeDiv = document.getElementById(`${mu.name}-upgrade`);
-  const nextLevelDiv = document.getElementById(`${mu.name}-next-level`);
-  const nextLevelP = document.getElementById(`${mu.name}-next-p`);
-  const upgradeButton = document.getElementById(`${mu.name}-button`); // Bottone di acquisto
+  const upgradeDiv = document.getElementById(`${mu.name}-upgrade`)
+  const nextLevelDiv = document.getElementById(`${mu.name}-next-level`)
+  const nextLevelP = document.getElementById(`${mu.name}-next-p`)
 
-  // Se il livello è 127 o superiore, blocca tutto e mostra il messaggio
-  if (mu.level >= 50) {
-    upgradeButton.disabled = true; // Disabilita il bottone
-    upgradeButton.style.opacity = 0.5; // Rende il bottone meno visibile
-    nextLevelP.innerHTML = "This is the max level."; // Mostra il messaggio "This is the max level."
-    return; // Non permettere l'acquisto
-  }
+  console.log(`Current level: ${mu.level.textContent}`);  // O usa .innerHTML
 
-  // Se il livello non è 127, permetti l'acquisto
+  if (parseInt(mu.level.innerHTML) >= 50) {
+    upgradeButton.disabled = true;  // Disabilita il bottone
+    upgradeButton.style.opacity = 0.5;  // Rende il bottone meno visibile
+    nextLevelP.innerHTML = "This is the max level.";  // Mostra il messaggio
+    return;  // Ferma l'esecuzione della funzione e non permette l'acquisto
+  }  
+
   if (parseduPhones >= mu.parsedCost) {
-    const upgradeSound = new Audio('/assets/audio/upgrade.mp3');
-    upgradeSound.volume = 0.1;
-    upgradeSound.play();
+    const upgradeSound = new Audio('/assets/audio/upgrade.mp3')
+    upgradeSound.volume = 0.1
+    upgradeSound.play()
 
-    uPhones.innerHTML = nf(parseduPhones -= mu.parsedCost); // Aggiorna il valore degli uPhones
+    uPhones.innerHTML = nf(parseduPhones -= mu.parsedCost);
 
-    let index = powerUpIntervals.indexOf(parseFloat(mu.level.innerHTML));
+    let index = powerUpIntervals.indexOf(parseFloat(mu.level.innerHTML))
 
-    if (index !== -1) {
+    if ( index !== -1 ) {
       upgradeDiv.style.cssText = `border-color: white`;
-      nextLevelDiv.style.cssText = `background-color: #5A5959; font-weight: normal`;
-      mu.cost.innerHTML = nf(mu.parsedCost *= mu.costMultiplier);
+      nextLevelDiv.style.cssText =  `background-color: #5A5959; font-weight: normal`;
+      mu.cost.innerHTML = nf(mu.parsedCost *= mu.costMultiplier)
 
-      if (mu.name === 'clicker') {
-        uPpc *= mu.powerUps[index] ? mu.powerUps[index].multiplier : 1; // Controlla se l'elemento esiste prima di usarlo
+      if ( mu.name === 'clicker' ) {
+        uPpc *= mu.powerUps[index].multiplier
         nextLevelP.innerHTML = `+${mu.parsedIncrease} uPhones per click`
       } else {
-        uPps -= mu.power;
-        mu.power *= mu.powerUps[index] ? mu.powerUps[index].multiplier : 1; // Controlla se l'elemento esiste prima di usarlo
-        uPps += mu.power;
+        uPps -= mu.power
+        mu.power *= mu.powerUps[index].multiplier
+        uPps += mu.power
         nextLevelP.innerHTML = `+${mu.parsedIncrease} uPhones per second`
       }
-    }
+    } 
 
-    mu.level.innerHTML++; // Incrementa il livello dell'upgrade
+    mu.level.innerHTML++
 
-    index = powerUpIntervals.indexOf(parseFloat(mu.level.innerHTML));
+    index = powerUpIntervals.indexOf(parseFloat(mu.level.innerHTML))
 
-    if (index !== -1) {
+    if ( index !== -1 ) {
       upgradeDiv.style.cssText = `border-color: orange`;
-      nextLevelDiv.style.cssText = `background-color: #CC4500; font-weight: bold`;
-      nextLevelP.innerText = mu.powerUps[index] ? mu.powerUps[index].description : '';
+      nextLevelDiv.style.cssText =  `background-color: #CC4500; font-weight: bold`;
+      nextLevelP.innerText = mu.powerUps[index].description
 
-      mu.cost.innerHTML = nf(mu.parsedCost * 2.5 * 1.004 ** parseFloat(mu.level.innerHTML));
+      mu.cost.innerHTML = nf(mu.parsedCost * 2.5 * 1.004 ** parseFloat(mu.level.innerHTML))
     } else {
-      mu.cost.innerHTML = nf(mu.parsedCost *= mu.costMultiplier);
-      mu.parsedIncrease = parseFloat((mu.parsedIncrease * mu.uPhonesMultiplier).toFixed(2));
+      mu.cost.innerHTML = nf(mu.parsedCost *= mu.costMultiplier)
+      mu.parsedIncrease = parseFloat((mu.parsedIncrease * mu.uPhonesMultiplier).toFixed(2))
 
-      if (mu.name === 'clicker') nextLevelP.innerHTML = `+${mu.parsedIncrease} uPhones per click`;
-      else nextLevelP.innerHTML = `+${mu.parsedIncrease} uPhones per second`;
+      if ( mu.name === 'clicker') nextLevelP.innerHTML = `+${mu.parsedIncrease} uPhones per click`
+      else nextLevelP.innerHTML = `+${mu.parsedIncrease} uPhones per second`
     }
 
-    if (mu.name === 'clicker') uPpc += mu.parsedIncrease;
+    if ( mu.name === 'clicker' ) uPpc += mu.parsedIncrease
     else {
-      uPps -= mu.power;
-      mu.power += mu.parsedIncrease;
-      uPps += mu.power;
+      uPps -= mu.power
+      mu.power += mu.parsedIncrease
+      uPps += mu.power
     }
   }
 }

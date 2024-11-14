@@ -8,7 +8,36 @@
 </head>
 <body>
     <div class="info-section">
+    <button class="back-button" onclick="goToIndex()"> &larr; </button>
     <h1>About the Game</h1>
     <p>uPhones is a clicker game where you’re an entrepreneur selling uPhones! Start by selling a few, then upgrade your abilities and tools to boost production and profits. With each improvement, you can sell more uPhones, earn more money, and work your way toward becoming a true business mogul!</p>
   </div>
+
+  <script>
+    
+    // Recupera il tempo salvato e riprendi da lì
+    const IM = new Audio('/assets/audio/InitialMusic.mp4');
+    IM.volume = 0.2;
+
+    // Controlla se esiste un tempo salvato
+    const savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+    IM.currentTime = savedTime;
+    }
+    IM.play();
+
+    
+  function goToIndex() {
+    // Percorso assoluto per puntare alla radice del progetto
+    let path = '../../menu.html';
+    
+    // Log per debug
+    console.log("Tentativo di accesso al percorso: ", path);
+    
+    // Reindirizzamento alla radice
+    window.location.href = path;
+  }
+
+</script>
+
 </body>

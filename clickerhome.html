@@ -6,6 +6,8 @@
   <title>uPhone Clicker</title>
   <link rel="icon" href="data:image/x-icon;,">
   <link rel="stylesheet" href="./style.css"> <!-- Collega il foglio di stile CSS -->
+  <link rel="stylesheet" href="./utils/settings/settings.css"> <!-- Collega il foglio di stile CSS -->
+
 </head>
 <body draggable="false">
   <section>
@@ -73,12 +75,28 @@
       <button class="util-button" onclick="save()">Save</button>
       <button class="util-button" onclick="load()">Load</button>
       </div>
-
       <div class="relic">
       Relic: <span id="relic">0</span>
       </div>
-      </section>
 
-      <script type="module" src="./clickerscript.js"></script>
+      <!-- Bottone per aprire il menu -->
+<button id="settings-btn" class="settings-btn">⚙️</button>
+
+<!-- Menu di impostazioni -->
+<div id="settings-menu" class="settings-menu hidden">
+  <h3>Settings
+  </h3>
+  <label>
+    <input type="checkbox" id="audio-toggle"> Toggle Audio
+  </label>
+  <br>
+  <label>
+    <input type="checkbox" id="theme-toggle"> Dark Mode
+  </label>
+</div>
+
+
+      </section>
+      <script type="module" src="./main.js" defer></script>
       </body>
       </html>

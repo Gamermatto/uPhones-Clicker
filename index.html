@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>uPhones Menu</title>
-  <link rel="stylesheet" href="./initial-menu/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schermata di Caricamento</title>
+    <link rel="stylesheet" href="loading.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<ul>
-    <li><a href="./clickerhome.html" id="Pay" data-text="Play">Play</a></li>
-    <li><a href="./initial-menu/info-sections/info.html" data-text="Info">Info</a></li>
-    <li><a href="./initial-menu/contact-sections/contact.html" data-text="Contact">Contact</a></li>
-    <li><a href="./initial-menu/credits-sections/credits.html" data-text="Credits">Credits</a></li>
-  </ul>
-<!-- partial -->
-  
+    <div class="loading-container">
+        <div class="loading-bar">
+            <div class="progress"></div>
+        </div>
+        <p id="tip-text"></p> <!-- Lasciamo vuoto -->
+    </div>
+    <script src="loading.js"></script>
 </body>
-<script src="./initial-menu/index-menu.js"></script>
 </html>

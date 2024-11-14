@@ -10,26 +10,43 @@
   <section class="credits-section">
     <h1 class="credits-title">Credits</h1>
     <div class="credits-container">
+      <button class="back-button" onclick="goToIndex()"> &larr; </button>
       <div class="credits-item">
-        <h2>Developers</h2>
-        <p>GamerMatto</p>
+        <h2>All the game</h2>
+        <p>This game and the music were made by GamerMatto.</p>
         <p></p>
       </div>
-      <div class="credits-item">
-        <h2>Designers</h2>
-        <p>GamerMatto</p>s
-        <p></p>
-      </div>
-      <div class="credits-item">
-        <h2>Music</h2>
-        <p>GameOnSound Studio</p>
-      </div>
+      
       <div class="credits-item">
         <h2>Special Thanks</h2>
-        <p>Our Amazing Community</p>
+        <p>Thank you for your support and for playing this game! :)</p>
         <p></p>
       </div>
     </div>
   </section>
+  <script>
+    // Recupera il tempo salvato e riprendi da lì
+    const IM = new Audio('/assets/audio/InitialMusic.mp4');
+    IM.volume = 0.2;
+
+    // Controlla se esiste un tempo salvato
+    const savedTime = localStorage.getItem("musicTime");
+    if (savedTime) {
+        IM.currentTime = savedTime;
+    }
+    IM.play();
+
+    function goToIndex() {
+    // Percorso assoluto per puntare alla radice del progetto
+    let path = '../../menu.html';
+    
+    // Log per debug
+    console.log("Tentativo di accesso al percorso: ", path);
+    
+    // Reindirizzamento alla radice
+    window.location.href = path;
+  }
+
+  </script>
 </body>
 </html>

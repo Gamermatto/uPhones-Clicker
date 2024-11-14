@@ -38,4 +38,26 @@ body {
     transform: scale(1.03);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
   }
+
+  .back-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 45px;
+    background-color: transparent;
+    border: none;
+    color: #ffc300;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .back-button:hover {
+    color: #ff9f00;
+  }
+  
+  .info-section {
+    position: relative; /* Necessario per il posizionamento assoluto del pulsante */
+    /* il resto del tuo stile */
+  }
+  
   
