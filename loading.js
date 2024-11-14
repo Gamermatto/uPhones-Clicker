@@ -5,6 +5,7 @@ IM.volume = 0.2;
 window.onload = function() {
     const tips = [
         "If you use autoclick, you will be banned.",
+        "If you are on mobile rotate your screen!.",
         "Respect others in the community.",
         "Make sure to save your progress often.",
         "Contact support if you encounter issues.",
