@@ -16,8 +16,8 @@
   <script>
     
     // Recupera il tempo salvato e riprendi da lì
-    const IM = new Audio('/assets/audio/InitialMusic.mp4');
-    IM.volume = 0.2;
+    const IM = new Audio('/assets/audio/InitialMusic.mp4')
+    IM.volume = 0.2;s
 
     // Controlla se esiste un tempo salvato
     const savedTime = localStorage.getItem("musicTime");
@@ -29,7 +29,7 @@
     
   function goToIndex() {
     // Percorso assoluto per puntare alla radice del progetto
-    let path = '../../menu.html';
+    let path = '../menu.html';
     
     // Log per debug
     console.log("Tentativo di accesso al percorso: ", path);

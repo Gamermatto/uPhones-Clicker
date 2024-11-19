@@ -1,9 +1,9 @@
 export const defaultUpgradeValues = [
-  {name: 'clicker', image: './assets/ClickUp.png', cost: 10, increase: 1, type: "upgrade"},
-  {name: 'pickaxe', image: './assets/pickaxe.png', cost: 60, increase: 4, type: "upgrade"},
-  {name: 'miner', image: './assets/miner.png', cost: 480, increase: 32, type: "upgrade"},
-  {name: 'factory', image: './assets/factory.png', cost: 42400, increase: 410, type: "upgrade"},
-  {name: 'potion', image: './assets/potion.png', cost: 52800, increase: 5500, type: "upgrade"},
+  {name: 'clicker', image: '../assets/ClickUp.png', cost: 10, increase: 1, type: "upgrade"},
+  {name: 'pickaxe', image: '../assets/pickaxe.png', cost: 60, increase: 4, type: "upgrade"},
+  {name: 'miner', image: '../assets/miner.png', cost: 480, increase: 32, type: "upgrade"},
+  {name: 'factory', image: '../assets/factory.png', cost: 42400, increase: 410, type: "upgrade"},
+  {name: 'potion', image: '../assets/potion.png', cost: 52800, increase: 5500, type: "upgrade"},
 ];
 
 export const defaultSkillValues = [

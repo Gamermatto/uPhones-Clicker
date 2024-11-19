@@ -265,3 +265,189 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* Specifiche per i Breakpoint */
+
+/* Desktop grande: >= 1200px */
+@media (min-width: 1200px) {
+  body {
+    font-size: 18px;
+  }
+  .main {
+    gap: 12vw;
+  }
+  .left {
+    font-size: 2vw;
+  }
+  .right-navbar > div {
+    width: 12vw;
+    height: 6vh;
+  }
+  .uPhones-image {
+    width: 25vw;
+  }
+  .upgrade {
+    width: 25vw;
+    height: 7vh;
+  }
+}
+
+/* Laptop: 992px - 1199px */
+@media (min-width: 992px) and (max-width: 1199px) {
+  body {
+    font-size: 16px;
+  }
+  .main {
+    gap: 10vw;
+  }
+  .left {
+    font-size: 1.8vw;
+  }
+  .right-navbar > div {
+    width: 10vw;
+    height: 5vh;
+  }
+  .uPhones-image {
+    width: 20vw;
+  }
+  .upgrade {
+    width: 22vw;
+    height: 6.5vh;
+  }
+}
+
+/* Tablet: 768px - 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    font-size: 14px;
+  }
+  .main {
+    gap: 8vw;
+  }
+  .left {
+    font-size: 1.5vw;
+  }
+  .right-navbar > div {
+    width: 8vw;
+    height: 4.5vh;
+  }
+  .uPhones-image {
+    width: 18vw;
+  }
+  .upgrade {
+    width: 18vw;
+    height: 6vh;
+  }
+}
+
+/* Mobile: 600px - 767px */
+@media (min-width: 600px) and (max-width: 767px) {
+  body {
+    font-size: 12px;
+  }
+  .main {
+    gap: 6vw;
+  }
+  .left {
+    font-size: 1.2vw;
+  }
+  .right-navbar > div {
+    width: 6.5vw;
+    height: 4vh;
+  }
+  .uPhones-image {
+    width: 15vw;
+  }
+  .upgrade {
+    width: 15vw;
+    height: 5.5vh;
+  }
+}
+
+/* Mobile stretto: < 600px */
+@media (max-width: 599px) {
+
+  body {
+    font-size: 10px;
+  }
+
+  .main {
+    gap: 4vw;
+    flex-direction: row; /* Disposizione verticale per spazi ristretti */
+  }
+
+  .left {
+    font-size: 6vw;
+  }
+
+  .right-navbar {
+    display: flex;
+    font-weight: bold;
+    margin-top: 5vh;
+    margin-left: 12px;
+  
+  }
+  
+  .right-navbar > div {
+    width: 15vw;
+    height: 3vh;
+  }
+
+  .uPhones-image {
+    width: 25vw;
+  }
+
+  /* Stili per le sezioni di upgrade */
+  .upgrade {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4.2vh 3vw;
+    border: 0.19vw solid white;
+    border-radius: 1vw;
+    height: 6vh;
+    width: 30vw;
+    position: relative;
+    margin-bottom: 1vh;
+  }
+
+  .util-button {
+    padding: 1vh 2.5vw;
+    font-size: 1.6vw;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: 0.6vw;
+  }  
+  .util-buttons {
+    position: absolute;
+    top: 1.5vh;
+    right: 7vw;
+    display: flex;
+    gap: 0.1vw;
+  }
+
+  .statistics {
+  top: 100px;
+  width: 4vw;
+  height: 11vh;
+  padding: 3vh;
+  border: 0.2vw white solid;
+  border-radius: 1vw;
+  top: 32.5vh;
+  left: 70vw;
+  transform: translate(90%);
+  }
+
+  .next-level-info {
+    position: absolute;
+    right: -5vw;
+    background-color: rgb(90, 89, 90);
+    height: 10vh;
+    width: 7vw;
+    text-align: center;
+    display: none;
+    font-size: 1.3vw;
+    border-radius: 0.5vw;
+  }
+
+}

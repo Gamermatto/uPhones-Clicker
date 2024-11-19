@@ -1,7 +1,7 @@
 
 
 // Elementi HTML
-const bgm = new Audio('./assets/audio/Game1.mp4');
+const bgm = new Audio('../assets/audio/Game1.mp4');
 const settingsBtn = document.getElementById("settings-btn");
 const settingsMenu = document.getElementById("settings-menu");
 const audioToggle = document.getElementById("audio-toggle");

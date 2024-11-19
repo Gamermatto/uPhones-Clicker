@@ -1,6 +1,6 @@
-import { powerUpIntervals, upgrades } from "./constants/upgrades.js";
-import { defaultSkillValues, defaultUpgradeValues } from "./constants/defaultValues.js";
-import { nf } from "./utils/formatter.js";
+import { powerUpIntervals, upgrades } from "../constants/upgrades.js";
+import { defaultSkillValues, defaultUpgradeValues } from "../constants/defaultValues.js";
+import { nf } from "../utils/formatter.js";
 
 // Seleziona l'elemento che mostra il costo degli uPhones e converte il suo valore in numero
 let uPhones = document.querySelector('.uPhones-cost');
@@ -198,8 +198,7 @@ setInterval(() => {
   parseduPhones += uPps / 10; // Aggiunge il guadagno per secondo
   uPhones.innerHTML = nf(parseduPhones); // Aggiorna il valore degli uPhones
   uPpcText.innerHTML = Math.round(uPpc); // Aggiorna il testo del guadagno per click
-  uPpsText.innerHTML = Math.round(uPps); // Aggiorna il testo del guadagno per secondo
-  bgm.play(); // Starta il suono bgm
+  uPpsText.innerHTML = Math.round(uPps); // Aggiorna il testo del guadagno per second
 
   if (parseduPhones >= 1_000_000) {
     prestigeButton.style.display = "block";

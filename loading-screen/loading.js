@@ -1,5 +1,5 @@
 // Definizione e configurazione dell'audio
-const IM = new Audio('/assets/audio/InitialMusic.mp4');
+const IM = new Audio('../assets/audio/InitialMusic.mp4');
 IM.volume = 0.2;
 
 window.onload = function() {
@@ -43,6 +43,6 @@ window.onload = function() {
 
     // Imposta il reindirizzamento a 21 secondi
     setTimeout(() => {
-        window.location.href = './menu.html'; // cambia con il nome del file della pagina di destinazione
+        window.location.href = '../initial-menu/menu.html'; // cambia con il nome del file della pagina di destinazione
     }, fillTime + 1000); // 20000 + 1000 = 21000 (21 secondi)
 };
