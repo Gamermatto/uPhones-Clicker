@@ -1,3 +1,4 @@
+
 export const defaultUpgradeValues = [
   {name: 'clicker', image: '../assets/ClickUp.png', cost: 10, increase: 1, type: "upgrade"},
   {name: 'pickaxe', image: '../assets/pickaxe.png', cost: 60, increase: 4, type: "upgrade"},

@@ -207,6 +207,17 @@ setInterval(() => {
   }
 }, 100);
 
+  upgradesNavButton.addEventListener("click", function() {
+    const upgradeContainers = document.querySelectorAll(".upgrade");
+
+    upgradeContainers.forEach((container) => {
+      if ( container.classList.contains('type-upgrade')) container.style.display = "flex";
+      else container.style.display = container.style.display === "flex" ? "none" : "flex";
+    });
+  }); 
+
+
+
 skillsNavButton.addEventListener("click", function() {
   const upgradeContainers = document.querySelectorAll(".upgrade");
 
@@ -215,15 +226,6 @@ skillsNavButton.addEventListener("click", function() {
     else container.style.display = "none";
   });
 });
-
-upgradesNavButton.addEventListener("click", function() {
-  const upgradeContainers = document.querySelectorAll(".upgrade");
-
-  upgradeContainers.forEach((container) => {
-    if ( container.classList.contains('type-upgrade')) container.style.display = "flex";
-    else container.style.display = "none";
-  });
-}); 
 
 artifactsNavButton.addEventListener("click", function() {
   const upgradeContainers = document.querySelectorAll(".upgrade");

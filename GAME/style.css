@@ -385,7 +385,7 @@ body {
     font-weight: bold;
     margin-top: 5vh;
     margin-left: 12px;
-  
+    gap: 1.2vw;
   }
   
   .right-navbar > div {
@@ -411,6 +411,19 @@ body {
     margin-bottom: 1vh;
   }
 
+  .next-level-info {
+    /* Tolto per problemi di dimensioni */
+  }
+
+  .upgrade-img {
+    width: 6vw;
+  }
+  
+  .uPhones-img {
+    width: 5vw;
+    height: 5vh;
+  }
+
   .util-button {
     padding: 1vh 2.5vw;
     font-size: 1.6vw;
@@ -421,21 +434,35 @@ body {
   .util-buttons {
     position: absolute;
     top: 1.5vh;
-    right: 7vw;
+    right: 18vw;
     display: flex;
     gap: 0.1vw;
   }
 
   .statistics {
-  top: 100px;
-  width: 4vw;
+  width: 25vw;
   height: 11vh;
   padding: 3vh;
   border: 0.2vw white solid;
   border-radius: 1vw;
-  top: 32.5vh;
-  left: 70vw;
+  top: 79.5vh;
+  left: 2vw;
   transform: translate(90%);
+  }
+  
+  /* Stili per il testo giallo */
+
+  .yellow-text {
+    font-size: 4vw; /* Dimensione del font relativa alla larghezza della finestra */
+    color: rgb(234, 243, 115);
+    font-weight: 700;
+    text-shadow: 0.2vw 0.2vw 0.3vw rgb(230, 220, 142);
+  }
+
+  .texts {
+    display: block;
+    font-weight: bold;
+    font-size: 4vw;
   }
 
   .next-level-info {
@@ -448,6 +475,11 @@ body {
     display: none;
     font-size: 1.3vw;
     border-radius: 0.5vw;
+  }
+
+  /* Stili per il testo del costo */
+  .cost-text {
+    font-size: 3.5vw;
   }
 
 }
