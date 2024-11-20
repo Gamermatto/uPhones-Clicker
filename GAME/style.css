@@ -384,8 +384,8 @@ body {
     display: flex;
     font-weight: bold;
     margin-top: 5vh;
-    margin-left: 12px;
     gap: 1.2vw;
+    padding-left: 20vw;
   }
   
   .right-navbar > div {
@@ -395,6 +395,17 @@ body {
 
   .uPhones-image {
     width: 25vw;
+    padding-left: 100px;
+  }
+
+  #upgrades-container {
+    max-height: 40vh; /* Altezza massima in base all'altezza della finestra */
+    width: 100vw; /* Larghezza relativa alla larghezza della finestra */
+    padding: 5.9vh;
+    overflow-y: scroll;
+    position: relative;
+    margin-bottom: 10vh;
+    left: 1vw;
   }
 
   /* Stili per le sezioni di upgrade */
@@ -409,6 +420,8 @@ body {
     width: 30vw;
     position: relative;
     margin-bottom: 1vh;
+    bottom: 1px;
+    
   }
 
   .next-level-info {
